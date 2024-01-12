@@ -3,6 +3,7 @@ FROM node:18-alpine AS base
 FROM base AS deps
 
 RUN apk add --no-cache libc6-compat
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 
 WORKDIR /app
 
